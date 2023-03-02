@@ -1,9 +1,17 @@
 import './App.css';
+import Nav from './Components/Nav';
+import {Routes, Route} from 'react-router-dom';
+import Track from './Components/Track';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1 className=' bg-red-300'>Crypto Currency Tracker</h1>
+      <Nav/>
+     <Routes>
+      <Route path="/" element={ <Home/> } />
+      <Route path="track" element={ <Track/> } />
+     </Routes>
     </div>
   );
 }

@@ -7,11 +7,15 @@ import Home from './Components/Home';
 function App() {
   return (
     <div className="App">
-      <Nav/>
-     <Routes>
-      <Route path="/" element={ <Home/> } />
-      <Route path="track" element={ <Track/> } />
-     </Routes>
+      <div className='flex items-center justify-center'>
+        <div className='lex items-center w-[1024px] m-[20px]'>
+          <Nav/>
+          <Routes>
+            <Route path="/" element={ <Home/> } />
+            <Route path="track" element={ <Track/> } />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }

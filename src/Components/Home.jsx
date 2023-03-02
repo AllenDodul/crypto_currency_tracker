@@ -30,6 +30,8 @@ const Home = () => {
 
   return (
     <div className=' my-[20px]'>
+      {error && <h1>{error}</h1>}
+      {loading && <h1>loading</h1>}
       <Coins coins={coins}/>
     </div>
   )

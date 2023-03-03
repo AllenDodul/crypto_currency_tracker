@@ -2,13 +2,13 @@ import React,{useState, useEffect} from 'react';
 
 const SearchBar = (props) => {
   const [searchValue, setSearchValue] = useState('');
-
+  
   const searchCoin = (e) =>{
     setSearchValue(e.target.value);
+    props.getSearchValue(searchValue);
   }
   
   useEffect(()=>{
-    props.getSearchValue(searchValue);
   }, [searchValue])
   return (
     <div className='flex items-center justify-center m-[20px]'>

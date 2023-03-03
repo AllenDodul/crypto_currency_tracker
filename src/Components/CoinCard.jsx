@@ -1,16 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const CoinCard = (props) => {
+  const selectCard = () =>{
+    props.singleCoin(props.coin);
+  }
+
   return (
-    <div  className='flex items-center bg-[rgba(0,0,0,0.3)] m-[20px] p-[5px] rounded w-[250px]'>
-      <div>
-        <img className='h-[50px]' src={props.coin.image} alt="" />
+    <Link to='singlecoin'>
+      <div onClick={selectCard} className='flex items-center bg-[rgba(0,0,0,0.3)] m-[10px] p-[5px] rounded w-[250px] cursor-pointer'>
+        <div>
+          <img className='h-[50px]' src={props.coin.image} alt={props.coin.name} />
+        </div>
+        <div className='mx-[10px]'>
+          <h2>{props.coin.name}</h2>
+          <p>{props.coin.current_price}</p>
+        </div>
       </div>
-      <div>
-        <h2>{props.coin.name}</h2>
-        <p>{props.coin.current_price}</p>
-      </div>
-    </div>
+    </Link>
   )
 }
 

@@ -4,7 +4,8 @@ import {Routes, Route} from 'react-router-dom';
 import Track from './Components/Track';
 import Home from './Components/Home';
 import SingleCoinPage from './Components/SingleCoinPage';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import News from './Components/News';
 
 function App() {
   const [singlePageCoin, setSinglePageCoin] = useState({});
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={ <Home singleCoin={singleCoin}/> } />
             <Route path="track" element={ <Track/> } />
             <Route path='singlecoin' element={<SingleCoinPage singlePageCoin={singlePageCoin}/>}/>
+            <Route path='news' element={<News />}/>
           </Routes>
         </div>
       </div>

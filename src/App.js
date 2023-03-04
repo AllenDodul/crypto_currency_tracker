@@ -9,9 +9,17 @@ import News from './Components/News';
 
 function App() {
   const [singlePageCoin, setSinglePageCoin] = useState({});
+  const [watchList, setWatchList] = useState([]);
   
   const singleCoin = (coin) =>{
     setSinglePageCoin(coin);
+  }
+
+  const handleWatchList = (coin) =>{
+    setWatchList((prevCoin)=>{
+      return [...prevCoin, coin];
+    })
+    console.log(watchList);
   }
 
   return (
@@ -21,8 +29,8 @@ function App() {
           <Nav/>
           <Routes>
             <Route path="/" element={ <Home singleCoin={singleCoin}/> } />
-            <Route path="track" element={ <Track/> } />
-            <Route path='singlecoin' element={<SingleCoinPage singlePageCoin={singlePageCoin}/>}/>
+            <Route path="track" element={ <Track watchList={watchList}/> } />
+            <Route path='singlecoin' element={<SingleCoinPage singlePageCoin={singlePageCoin} handleWatchList={handleWatchList}/>}/>
             <Route path='news' element={<News />}/>
           </Routes>
         </div>

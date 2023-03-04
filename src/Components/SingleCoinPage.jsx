@@ -1,23 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-
-/* 
-1. image
-2. name
-3. price
-4. ath_change_percentage
-5. circulating_supply
-6. current_price
-7. market_cap
-8. market_cap_change_24h
-9. market_cap_change_percentage_24h
-10. price_change_24h
-11. price_change_percentage_24h
-
-*/
 const SingleCoinPage = (props) => {
+  const [addToWishList, setAddToWishList] = useState(false);
   const {singlePageCoin} = props; 
-  console.log(singlePageCoin);
+
+  const handleWatchListBTN = () =>{
+    setAddToWishList(true);
+    props.handleWatchList(singlePageCoin);
+  }
+
   return (
     <div className=' my-[20px]'>
       <div className='flex flex-wrap'>
@@ -47,7 +38,7 @@ const SingleCoinPage = (props) => {
         <p>Circulating Supply: {singlePageCoin.circulating_supply}</p>
       </div>
       <div className='m-[20px]'>
-        <button className=' bg-[#CF7D56] text-black p-[5px] rounded'>Add To Watch List</button>
+        <button onClick={handleWatchListBTN} className='bg-[#CF7D56] text-black p-[5px] rounded'>{addToWishList === true ? "Added To Watch List" : "Add To Watch List"}</button>
       </div>
     </div>
   )

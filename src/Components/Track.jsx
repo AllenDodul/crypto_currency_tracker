@@ -1,9 +1,10 @@
 import React from 'react';
+import TrackCard from './TrackCard';
 
-const Track = () => {
+const Track = (props) => {
   return (
-    <div>
-      <h1>This is Tracker page.</h1>
+    <div className="my-[20px]">
+      {props.watchList.map((coin)=><TrackCard key={coin.name} coin={coin}/>)}
     </div>
   )
 }

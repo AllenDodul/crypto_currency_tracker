@@ -36,10 +36,10 @@ const News = () => {
   },[])
   
   return (
-    <div>
+    <div className='my-[20px]'>
       {error && <h1>{error}</h1> }
       {loading && <p>{<Loading/>}</p>}
-      {news && news.map((singleNews)=> <p>{<NewsCard singleNews={singleNews}/>}</p>)}  
+      {news && news.map((singleNews)=> <p>{<NewsCard key={singleNews.title} singleNews={singleNews}/>}</p>)}  
     </div>
   )
 }

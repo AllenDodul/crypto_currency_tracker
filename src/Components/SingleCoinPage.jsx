@@ -46,6 +46,9 @@ const SingleCoinPage = (props) => {
         <p>Market Cap Change Percentage 24h: {singlePageCoin.market_cap_change_percentage_24h}</p>
         <p>Circulating Supply: {singlePageCoin.circulating_supply}</p>
       </div>
+      <div className='m-[20px]'>
+        <button className=' bg-[#CF7D56] text-black p-[5px] rounded'>Add To Watch List</button>
+      </div>
     </div>
   )
 }

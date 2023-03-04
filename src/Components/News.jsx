@@ -1,4 +1,6 @@
 import React,{ useEffect, useState} from 'react'
+import Loading from './Loading';
+import NewsCard from './NewsCard';
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -36,8 +38,8 @@ const News = () => {
   return (
     <div>
       {error && <h1>{error}</h1> }
-      {loading && <p>{loading}</p>}
-      {news && <p>{loading}</p>}  
+      {loading && <p>{<Loading/>}</p>}
+      {news && news.map((singleNews)=> <p>{<NewsCard singleNews={singleNews}/>}</p>)}  
     </div>
   )
 }

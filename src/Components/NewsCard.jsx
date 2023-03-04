@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NewsCard = (props) => {
-  const {date, title, description, url} = props.singleNews
+  const {date, title, description} = props.singleNews
   console.log();
   return (
     <div className='m-[20px]'>

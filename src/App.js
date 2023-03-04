@@ -18,8 +18,12 @@ function App() {
   const handleWatchList = (coin) =>{
     setWatchList((prevCoin)=>{
       return [...prevCoin, coin];
-    })
-    console.log(watchList);
+    });
+  }
+
+  const handleWatchListRemove = (coin) =>{
+    const filterWatchList = watchList.filter((singleCoin)=> singleCoin.name!== coin.name);
+    setWatchList(filterWatchList);
   }
 
   return (
@@ -29,7 +33,7 @@ function App() {
           <Nav/>
           <Routes>
             <Route path="/" element={ <Home singleCoin={singleCoin}/> } />
-            <Route path="track" element={ <Track watchList={watchList}/> } />
+            <Route path="track" element={ <Track watchList={watchList} handleWatchListRemove={handleWatchListRemove}/> } />
             <Route path='singlecoin' element={<SingleCoinPage singlePageCoin={singlePageCoin} handleWatchList={handleWatchList}/>}/>
             <Route path='news' element={<News />}/>
           </Routes>

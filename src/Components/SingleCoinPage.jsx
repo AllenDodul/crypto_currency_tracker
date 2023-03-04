@@ -24,7 +24,7 @@ const SingleCoinPage = (props) => {
           <p className='text-lg'>Price : {singlePageCoin.current_price} USD</p>
         </div>
       </div>
-      <div className='m-[20px]'>
+      <div className='my-[20px]'>
         <h2 className='text-xl'>Info</h2>
         <div className="flex items-center justify-center">
           <div className=' w-[100%] h-[1px] bg-gray-600 my-[10px]'></div>
@@ -37,8 +37,8 @@ const SingleCoinPage = (props) => {
         <p>Market Cap Change Percentage 24h: {singlePageCoin.market_cap_change_percentage_24h}</p>
         <p>Circulating Supply: {singlePageCoin.circulating_supply}</p>
       </div>
-      <div className='m-[20px]'>
-        <button onClick={handleWatchListBTN} className='bg-[#CF7D56] text-black p-[5px] rounded'>{addToWishList === true ? "Added To Watch List" : "Add To Watch List"}</button>
+      <div className='my-[20px]'>
+        <button onClick={handleWatchListBTN} className='bg-[#CF7D56] text-black p-[5px] border-none outline-none rounded'>{addToWishList === true ? "Added To Watch List" : "Add To Watch List"}</button>
       </div>
     </div>
   )
